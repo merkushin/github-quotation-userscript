@@ -5,7 +5,6 @@
 // @license MIT
 // @version 1.0
 // @include https://github.com/*
-// @require https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js
 // ==/UserScript==
 (function(window, undefined) {
     var w;
