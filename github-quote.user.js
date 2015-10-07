@@ -30,9 +30,12 @@
 
                 (function() {
                     var codeString = codeStrings[i];
-                    codeString.onmouseup = function(e) {
+                    codeString.addEventListener('mouseup', function(e) {
                         var selectedObject = w.getSelection();
                         var selectedText = selectedObject.toString();
+                        if (!selectedText) {
+                            return;
+                        }
                         var commentBtn = codeString.getElementsByClassName('js-add-line-comment')[0];
                         commentBtn.click();
 
@@ -40,7 +43,7 @@
                         var commentRow = codeRow.nextSibling;
                         var textArea = commentRow.getElementsByClassName('js-comment-field')[0];
                         textArea.innerHTML = '```\n' + selectedText + '\n```\n';
-                    };
+                    });
                 })();
 
             }
