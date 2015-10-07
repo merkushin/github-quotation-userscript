@@ -18,7 +18,7 @@
         return;
     }
 
-    if (/https:\/\/github.com/.test(w.location.href)) {
+    if (/^https:\/\/github.com/.test(w.location.href)) {
         (function(w) {
             var container = document.getElementById('diff');
             if (!container) {
