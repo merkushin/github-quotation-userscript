@@ -20,8 +20,12 @@
 
     if (/^https:\/\/github.com/.test(w.location.href)) {
         (function(w) {
-            var container = document.getElementById('diff');
+            var container = document.getElementById('files');
             if (!container) {
+                return;
+            }
+
+            if (!container.classList.contains('diff-view')) {
                 return;
             }
 
@@ -42,7 +46,8 @@
                         var codeRow = codeString.parentNode;
                         var commentRow = codeRow.nextSibling;
                         var textArea = commentRow.getElementsByClassName('js-comment-field')[0];
-                        textArea.innerHTML = '```\n' + selectedText + '\n```\n';
+                        console.log(textArea, selectedText);
+                        textArea.value = '```\n' + selectedText + '\n```\n';
                     });
                 })();
 
