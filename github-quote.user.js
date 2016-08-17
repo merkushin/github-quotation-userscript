@@ -46,7 +46,6 @@
                         var codeRow = codeString.parentNode;
                         var commentRow = codeRow.nextSibling;
                         var textArea = commentRow.getElementsByClassName('js-comment-field')[0];
-                        console.log(textArea, selectedText);
                         textArea.value = '```\n' + selectedText + '\n```\n';
                     });
                 })();
